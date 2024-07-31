@@ -1,4 +1,4 @@
-
+Ceci est une tentative de numérisation du cours de philo de terminale de M. Martinez.
 ## Tusculanes, Cicéron
 
 Trois genre de vie #bonheur, Parabole des panégyries

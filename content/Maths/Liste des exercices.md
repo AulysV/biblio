@@ -1,11 +1,6 @@
----
-title: Bibliothèque de notes
----
-Hallo
-
 <style>
   .responsive-embed {
-    height: 50vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,5 +12,5 @@ Hallo
 </style>
 
 <div class="responsive-embed">
-  <embed src="https://www.aulysv.fr/_app/immutable/assets/buancom.CW5OIzkE.pdf" type="application/pdf">
+  <embed src="https://molin-mathematiques.fr/exo/Liste-exercices-MPSI" type="application/pdf">
 </div>
