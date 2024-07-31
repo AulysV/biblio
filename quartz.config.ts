@@ -11,9 +11,7 @@ const config: QuartzConfig = {
     pageTitle: "Aulys VINAY",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
+    analytics: { provider: 'tinylytics', siteId: 'sa_NtrNp_msujaZM6XeG' },
     locale: "fr-FR",
     baseUrl: "quartz.jzhao.xyz",
     ignorePatterns: ["private", "templates", ".obsidian"],

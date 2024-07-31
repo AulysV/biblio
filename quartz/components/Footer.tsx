@@ -24,6 +24,7 @@ export default ((opts?: Options) => {
             </li>
           ))}
         </ul>
+        <script src="https://tinylytics.app/embed/sa_NtrNp_msujaZM6XeG.js" defer></script> 
       </footer>
     )
   }
