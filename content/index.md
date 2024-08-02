@@ -3,8 +3,10 @@ title: Bibliothèque de notes
 ---
 Thèmes présents pour l'instant :
 
-# [[🔭 Sciences]]
+[[🔭 Sciences]] : 
+	[[TIPE]]
 
-## [[TIPE]]
+[[🧠 Philo]]
 
-# [[🧠 Philo]]
+[[🚲️ Expériences]] : 
+	[[Reims]]

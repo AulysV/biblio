@@ -1,6 +1,13 @@
+---
+tags:
+  - voyage
+  - vélo
+  - expériences
+---
+
 # Paris − Reims
 
-Les images peuvent mettre du temps à charger.
+Les images peuvent mettre du temps à charger. 
 
 ![[Files/photoreims/reims.mp4]]
 
