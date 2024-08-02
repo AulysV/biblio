@@ -1,21 +1,10 @@
 ---
 title: Bibliothèque de notes
 ---
-Hallo
+Thèmes présents pour l'instant :
 
-<style>
-  .responsive-embed {
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .responsive-embed embed {
-    width: 100%;
-    height: 100%;
-  }
-</style>
+# [[🔭 Sciences]]
 
-<div class="responsive-embed">
-  <embed src="https://www.aulysv.fr/_app/immutable/assets/buancom.CW5OIzkE.pdf" type="application/pdf">
-</div>
+## [[TIPE]]
+
+# [[🧠 Philo]]
