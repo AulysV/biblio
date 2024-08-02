@@ -1,1 +1,1 @@
-1. Paris−Reims : [[Reims]]
+[[🧳 Voyages]]
