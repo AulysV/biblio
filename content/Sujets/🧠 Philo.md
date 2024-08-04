@@ -15,7 +15,7 @@ Mon point de vue de ce qu'est la philosophie se rapproche beaucoup plus de la pr
 [[Textes philo]] (liste de textes divers)
 ### Thèmes
 - [[Conscience]]
-- [[Inconscient
+- [[Inconscient]]
 - [[Sur la technique]]
 ### Œuvres
 *[[Manuel]]*, Épictète

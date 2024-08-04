@@ -20,6 +20,9 @@ import { Mutex } from "async-mutex"
 import DepGraph from "./depgraph"
 import { getStaticResourcesFromPlugins } from "./plugins"
 
+import { inject } from '@vercel/analytics';
+inject();
+
 type Dependencies = Record<string, DepGraph<FilePath> | null>
 
 type BuildData = {

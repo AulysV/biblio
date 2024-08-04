@@ -1,1 +1,0 @@
-Philosophie de la bêtise
