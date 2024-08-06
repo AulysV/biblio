@@ -1,0 +1,2 @@
+La bête est majoritairement celle qui permet la **réflexion profonde** (qu'on peut relier à ce que certains appellent le #flow). C'est ce type de réflexion qui est atteint lors d'un DS de maths par exemple. La réflexion de surface crée par le "je" s'efface et laisse place à celle de la bête, où l'intuition guide la réflexion. Ce sont ces moments qu'il faut chercher à attendre de manière optimale, c'est à dire rapidement et efficacement. 
+

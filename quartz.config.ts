@@ -12,7 +12,7 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: { provider: 'tinylytics', siteId: 'sa_NtrNp_msujaZM6XeG' },
-    locale: "fr-FR",
+    locale: "en-US",
     baseUrl: "biblio.aulysv.fr",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",

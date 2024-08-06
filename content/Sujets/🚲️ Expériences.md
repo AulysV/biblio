@@ -1,2 +1,3 @@
-[[🧳 Voyages]]
-[[🙉 Bêtises]]
+# [[🧳 Voyages]]
+
+# [[La bêtise]]

@@ -161,7 +161,7 @@ Kant : #raison #empirisme
 - Jugement réfléchissant → recherche de l'universel à travers le particulier (empirisme) 
 → Médecin : possède des concepts qu'il apprend, puis recherche des particularités dans ses expériences qu'il calque à l'universel
 
-Sa Majesté des Mouches, Peter Brook (réalisateur), William Golding (auteur) #social #politique
+Sa Majesté des Mouches, Peter Brook (réalisateur), William Golding (auteur) #société #politique
 #lois → Nomos 
 #justice → Dikè
 

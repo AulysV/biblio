@@ -1,0 +1,3 @@
+Le "je" désigne le maître de la bête. Il est responsable de la #conscience , et n'existe que parce que la bête existe. L'inverse n'est pas vrai : la période de petite enfance ainsi que les animaux ne présentent que la bête sans le "je". Ensemble, ils forment le groupe capable de la réflexion. 
+
+Même si je ne pense pas que Freud serait une référence pour moi, ma conception du "je" peut se rapprocher à sa conception du "moi" (voir [[Cours de philo]]).

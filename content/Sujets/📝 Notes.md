@@ -3,7 +3,15 @@ draft: "true"
 ---
 # Bastringue
 ## Notes à continuer/commencer : 
-[[🙉 Bêtises]] : philosophie de la bêtise
+[[La bêtise]]
 [[🧳 Voyages]]
-[[Sur l'intuition]]
-[[Imagination]]
+[[Sur le conformisme]]
+[[Sur la science]]
+[[Sur l'esprit]]
+[[La prépa]]
+[[Sur l'enfance]]
+[[La discipline]]
+[[Le corps]]
+[[Le sport]]
+[[Compiègne]]
+[[Le décorum]]
