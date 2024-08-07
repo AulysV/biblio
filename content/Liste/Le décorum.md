@@ -21,7 +21,7 @@ Je pense qu'il peut être bon de le résoudre, je culpabilise un peu de faire de
 
 **Exemples**
 
-[[Le sport]], comme mentionné précédemment.
+Sur le sport, comme mentionné précédemment → [[Sur le corps]]
 Certains voyages, comme [[Reims]]
 L'apprentissage de morceaux de piano
 ...

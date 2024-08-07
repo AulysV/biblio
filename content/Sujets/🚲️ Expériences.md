@@ -1,4 +1,5 @@
 # [[🧳 Voyages]]
 
-# [[La bêtise]]
+# Sur le corps
 
+![[Sur le corps#Expériences]]

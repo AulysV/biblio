@@ -11,8 +11,8 @@ draft: "true"
 [[La prépa]]
 [[Sur l'enfance]]
 [[La discipline]]
-[[Le corps]]
-[[Le sport]]
+[[Sur le corps]]
+[[Sur le sport]]
 [[Compiègne]]
 [[Le décorum]]
 Musique
