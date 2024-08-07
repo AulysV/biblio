@@ -20,8 +20,8 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Roboto Slab",
-        body: "Fira Sans",
+        header: "Outfit",
+        body: "Inter",
         code: "Fira Code",
       },
       colors: {

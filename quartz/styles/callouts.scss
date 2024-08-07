@@ -43,7 +43,13 @@
     --callout-icon: var(--callout-icon-abstract);
   }
 
-  &[data-callout="info"],
+  &[data-callout="info"] {
+    --color: #dadadaea;
+    --border: #1c1b224d;
+    --bg: #3b39477a;
+    --callout-icon: var(--callout-icon-info);
+  }
+
   &[data-callout="todo"] {
     --color: #00b8d4;
     --border: #00b8d444;

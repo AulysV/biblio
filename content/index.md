@@ -1,16 +1,23 @@
 ---
-title: Bibliothèque de notes
+title: Accueil
 ---
 (**🏗️ Site en construction**)
 
-You've just landed on a library of notes ranging from the philosophy of stupidity to the usefulness of analog calculation in solving differential equations. All notes are in French (cocorico). 
+# Bonjour 👋
+
+You've just landed on a library of notes ranging from the [philosophy of stupidity](Liste/La-bêtise) to the [usefulness of analog calculation in solving differential equations](Liste/TIPE). All notes are in French (cocorico 🐓). 
 
 They're made for the future me, but you can take advantage of them if you find them interesting.
 
-There's a "Backlinks" category that lets you select notes which are "parents" to the one you're reading.
-There's also a "graphs" category that displays an interactive tree structure of the notes.
-
-# Current topics:
+> [!info]- Info for low IQ readers
+> *Why would you open it?* 🤦🤦‍♂️🤦‍♀️
+> Anyway:
+> - The site is designed to work on a large screen (sorry mobile users)
+> ![[layout.svg]]
+> - Light mode is awful
+> - The graph below is interactive 😉
+> - You can also comment below by logging into your GitHub account
+# Pages principales
 
 ## [[🧠 Philo]]
 

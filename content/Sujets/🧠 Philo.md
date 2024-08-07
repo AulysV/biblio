@@ -5,7 +5,7 @@ Définitions du TLF :
 - Ancienne définition : Toute connaissance rationnelle quel que soit son objet ; **système général des connaissances humaines**.
 - Définition actuelle : Réflexion critique sur les problèmes de l'action et de la connaissance humaine.
 
-Mon point de vue de ce qu'est la philosophie se rapproche beaucoup plus de la première définition. Je vois la philosophie comme le ciment de la connaissance : elle est celle qui lie toutes les disciplines ( #science, #littérature, #politique, #religion, #art, ...) entres elles, tout en étant un gros tas de boue prise toute seule. Sans toutes ces disciplines, la philosophie n'est rien. Et inversement, sans la philosophie, toutes ses connaissances sont solides isolément, mais ne forment rien collectivement.
+Mon point de vue de ce qu'est la philosophie se rapproche beaucoup plus de la première définition. Je vois la philosophie comme le ciment de la connaissance : elle est celle qui lie toutes les disciplines ( #science, #littérature, #politique, #religion, #art, ...) entres elles, tout en étant un gros tas de boue prise toute seule. Sans toutes ces disciplines, la philosophie n'est rien. Et inversement, sans la philosophie, toutes ses connaissances sont solides isolément, mais ne forment rien collectivement. ^070ee6
 
 La vision actuelle de la philosophie, en tant que réflexion pure n'est que décorum pur sans la présence d'une volonté de liaison entre différents côtés de la connaissance. Cette vision implique que celui qui peut se prétendre philosophe doit nécessairement maîtriser plusieurs des disciplines fondamentales qui permettent de construire le terme "connaissance". 
 
@@ -24,9 +24,6 @@ La philosophie commence au moment où des ponts sont créés entre des thèmes s
 - [[Le décorum]]
 - [[Sur la technique]]
 - [[La prépa]]
-
-
-
 # Philo scolaire
 
 [[Cours de philo]] de Terminale
