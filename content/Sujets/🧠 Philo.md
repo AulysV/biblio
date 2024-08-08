@@ -11,7 +11,7 @@ La vision actuelle de la philosophie, en tant que réflexion pure n'est que déc
 
 La philosophie commence au moment où des ponts sont créés entre des thèmes souvent isolés les uns des autres, entre autres à cause du système académique. Par exemple, on peut parler de philosophie lorsque la science réfléchit sur la politique, ou lorsque l'histoire apporte des connaissance à la science. Il est donc clair que la philosophie ne peut pas être un monde purement abstrait, où des thèses sont énoncées à partir de thèses précédentes sortie du néant, où la vérité est pensée isolément ou que l'étude des relations humaines est construite sous la bedrock.
 # Réflexions
-
+sliding panes
 - **[[Sur l'esprit]]**
 	- [[La bête]]
 	- [[Le je]]
