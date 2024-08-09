@@ -47,3 +47,11 @@ Tous les autres sont plus anciens (donc problème de mémoire) ou sympas
 - Compiègne
 - [[Reims]] ⭐️
 - Normandie vélo 2 ❤️ 
+
+Carte leaflet (normalement y'a une carte qui s'affiche en dessous) :
+
+```leaflet
+id: voyages
+lat: 48.866667
+long: 2
+```
