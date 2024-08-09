@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     analytics: { provider: 'tinylytics', siteId: 'sa_NtrNp_msujaZM6XeG' },
     locale: "en-US",
     baseUrl: "biblio.aulysv.fr",
-    ignorePatterns: ["private", "templates", ".obsidian", "**/private"],
+    ignorePatterns: ["private", "templates", ".obsidian", "**/Private"],
     defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
