@@ -5,291 +5,111 @@ tags:
   - numérique
   - électronique
 ---
-# Intro
+## Résolution analogique d'équations différentielles
 
-Avant la révolution numérique, les calculs physiques étaient réalisés à la main et mécaniquement (anticythère), puis électroniquement depuis la fin du XIXe.
+## Ancrage au thème
 
-Le numérique a fini par les remplacer, pour deux raisons principales : les ordinateurs numériques font des calculs exacts, et peuvent être programmés pour réaliser une variété infinie de tâches, contrairement à l’analogique qui consiste à réaliser des calculs en se basant sur les propriétés fondamentales de la physique qui est régie entre autres par des équations différentielles (loi des noeuds ou lois de fonctionnement).
+Lorsqu'une solution analytique à un problème n'est pas accessible, on peut recourir au numérique. Une autre méthode de résolution peut faire gagner en temps de calcul ou en stabilité : la résolution analogique, grâce à des circuits électriques. On convertit ainsi un problème de résolution en un problème de modélisation.
 
-Cependant, l’analogique a l'énorme avantage de ne pas échantillonner le réel et réaliser les calculs en se basant sur les propriétés de la physique peut faire gagner des facteurs 1000 en termes de rapidité et de coût énergétique, surtout si on considère l’impact écologique actuel du numérique.
+## Motivations du choix
 
-Nous pouvons donc nous demander **comment il est possible résoudre une équation différentielle analogiquement**.
+Travailler sur le calcul analogique me permet à la fois de comprendre les similarités entre l'électronique et les autres domaines de la physique, mais aussi de comprendre les raisons de la réapparition récente du calcul analogique dans les dernières recherches technologiques, comme en machine learning.
 
-Les premières idées qui me sont venues à propos de ce sujet, c’est le lien fort qui existe entre la mécanique et l’électronique : les mêmes équations différentielles existent entre le masse-ressort amorti et le RLC par exemple. Donc naturellement, pourquoi ne pas résoudre le masse ressort avec un RLC, et mesurer la tension aux bornes du condensateur pour avoir une idée de l’angle en fonction du temps ? Puisqu’il ne s’agit pas des mêmes grandeurs, les coefficients de l’équation de l'oscillateur harmonique sont une des choses auxquelles il faut faire attention. Et par identification des coefficients, on peut trouver des valeurs de R, L, et C en fonction de la masse du pendule et de la raideur du ressort.
+## Positionnement thématique
 
-Je me suis vite rendu compte que le problème de cette approche est la nécessité d’avoir l’équation du masse-ressort. J’ai donc créé un programme python permettant d’obtenir une équation différentielle potentielle à partir d’un tableau de mesures, en testant plusieurs modèles d’équations différentielles grâce à SciPy. Le programme fonctionne pour un pendule plan : la solution en sinusoïdale amortie est détectée, et le programme me renvoie des valeurs de R, L, C qui ne fonctionnent pas.
+- **Sciences industrielles** : Électronique
+- **Physique** : Micro-technologies
+- **Mathématiques** : Analyse : Équations différentielles (EDO)
 
-Cette méthode, qu’on peut appeler la méthode du circuit analogue, fonctionne pour des modèles simples et linéaires, mais on se trouve rapidement limité par nos connaissances en électronique la complexité de l’équation différentielle, surtout si elle n’est pas linéaire (en induction par exemple).
+## Mots-clefs
 
-Les physiciens ont donc développé la méthode d’intégrations successives. Théoriquement, elle consiste à isoler le terme de plus haut degré n, de l’intégrer n fois, puis répéter l’opération pour chaque degré de n-1 jusqu’à 1, tout en sommant à chaque fois les termes intégrés. → “schéma analytique”
+- **Français** : Analogique, Résolution, Équations différentielles, Numérique
+- **Anglais** : Analog computing, Differential Equations, Numeric
 
-Le problème de résolution d’équation différentielle se résume donc en un problème d’intégration. Mais l’intégration est assez simplement réalisable grâce à des composants électroniques comme les amplificateurs linéaires. Après avoir transformé le schéma analytique en circuit électrique, on obtient un circuit théorique suivant, en faisant attention à ajouter des résistances variables pour simuler les coefficients de l’équation.
+## Bibliographie commentée
 
-L’avantage de cette méthode est son adaptabilité : il suffit de changer les résistances en des composants non linéaires pour avoir n’importe quel type d’équation différentielle.
+(À faire)
 
-Une autre méthode pour intégrer successivement, est de le faire mécaniquement. Une entrée sous forme de translation est donnée à l’intégrateur mécanique, et le déplacement de la roue sur le disque en rotation permet de donner une vitesse de rotation intégrée en sortie.
+# Travail réalisé
 
-L’avantage de ces méthodes est le très faible coût énergétique. Le moteur lego est alimenté par 6 piles 1.5 volts pour une précision inexistante.
+## Piste actuelle
 
-Pour conclure, il existe plusieurs méthodes pour résoudre une équation différentielle analogiquement : avec un circuit analogue, ou grâce à la méthode d’intégrations successives.
+Grâce à la « Kelvin's feedback technique » que j'ai décrite dans la bibliographie commentée, on peut résoudre la plupart des équations différentielles linéaires par intégrations successives. On commence traditionnellement par faire un masse−ressort amorti.
 
-L’analogique reprend de la place de l'ingénierie surtout en traitement de signal et en machine learning, où le temps de calcul affreux le coût énergétique monstrueux sont une limite principale du numérique que l’analogique n’a pas.
+Voici un diagramme analytique associé au problème qu'on réalise généralement afin de programmer le calculateur analogique. Dans le cas du TIPE, il sert à schématiser le circuit électrique qui servira à la résolution. Ce diagramme dérangera par ailleurs certainement ceux qui se connaissent en calcul analogique. Il n'y a pas de volonté de rigueur absolue ici, seuls les éléments graphiques simplificateurs ont été retenus.
 
-# Slide
+(Les boites sont scrollables horizontalement)
 
-![[tipepptx.pdf]]
+![Diagramme analytique du masse ressort](https://www.aulysv.fr/_app/immutable/assets/diagram.6Ru6K0L7.svg)
 
-# Apport personnel
+### Explication :
 
-Le contour de l'apport personnel sera défini plus nettement après les
-premières expérimentaitons qui permettrons de délimiter ce qui est
-possible de ce qui ne l'est pas.
+On cherche à modéliser l'équation `ÿ + α·ẏ + β·y = e`. On a donc `ÿ = -α·ẏ -β·y + e`. Un sommateur permettra de calculer `ÿ` en sommant les trois termes. Chaque terme est obtenu en intégrant successivement `ÿ`. Chaque intégration successif est pondéré par une constante : `α` et `β`. On note qu'un inverseur est nécessaire pour retrouver du `-y` en sortie de l'intégrateur.
 
-## Intégrateur mécanique
+Ce diagramme peut être converti en circuit électrique :
 
-#### Travail réalisé
+![Image de circuit électrique intégrateur](https://www.aulysv.fr/_app/immutable/assets/circuit.BYiVAObz.svg)
 
-La première idée était celle d'un intégrateur mécanique permettant
-d'explorer rapidement les limites du calcul analogique mécanique.
-Malheuresement, le temps et les ressources n'ont pas été suffisants pour
-parvenir jusqu'au fonctionnement complet de l'intégrateur mécanique.
+On utilise des ALI en format intégrateurs (avec des résistances en parallèle). On remarque par ailleurs la nécessité d'avoir un inverseur après l'entrée en faisant les calculs.
 
-Cependant, une grande partie du travail a été réalisé. Un moteur permet de
-fournir une vitesse de rotation constante à la plaque carrée faisant
-office de disque.  
-Plus haut, un module translatable permet le traçage de la courbe dont l'intégrale
-est voulue (la partie « contrôle du traçage » n'a pas encore été réalisée...").  
-La vitesse de rotation de la roue dépend donc de la position de cette dernière
-sur le "disque" en rotation. La distance de son point d’appui avec le centre
-du disque, `y`, varie dans le temps.  
-Quand le disque tourne d’un angle infinitésimal dθ, soit pendant un intervalle
-de temps `βdτ`, l’axe de la roulette tourne d’un angle
-`y(τ) dθ`. Pendant un intervalle de temps `[0, t]`,
-l’axe de la roulette tourne donc d’un angle `α ∫ y(τ) β dτ`.  
-Le cylindre en bois transmet donc la vitesse de rotation à une vis sans fin
-qui permet le traçage de l’intégrale (de 0 à t) : `∫ y(τ) dτ`,
-à un facteur de proportionnalité près.  
-<a href="https://interstices.info/les-calculateurs-analogiques/" class="link link-hover" target="_blank" rel="noopener noreferrer">Source des calculs</a>
+### Calculs :
 
-#### Travail restant
+On note `R'` les résistances de `1 MΩ`. On résonne en potentiels.
 
-- Création de la partie qui controllera la courbe fournie à l'intégrateur.
-- Mise en place des supports permettant le traçage (j'ai déjà relié le
-  disque en rotation à des systèmes d'engrenages permettant de fournir
-  d'autres tiges en rotation, dont celles nécessaires à la translation des
-  supports).
+La loi des nœuds en A donne :
+$$
+i_{1} +i_{2} +i_{3} =i_{c} +i_{R'}
+$$
 
-![[Files/im.png]]
+On a donc l'équation suivante, qu'on note (1) :
+$$
+\frac{-V_{i}}{R} +\frac{V_{0}}{\beta R} +\frac{V_{x}}{\alpha R} =-C\frac{dV_{x}}{dt} -\frac{V_{x}}{R}
+$$
 
-## Programme python
+La loi des nœuds en B donne :
+$$
+\frac{V_{x}}{R} =C\frac{dV_{0}}{dt} -\frac{V_{0}}{R}
+$$
 
-Seconde idée : réalisation d'un programme python qui prend en entrée un
-tableau de valeurs : `t` et une autre variable `x` (ou
-plusieurs autres variables), et qui renvoie en sortie les détails d'un circuit
-électrique possédant une équation différentielle dont le résultat est analogue
-aux données fournies par le fichier de données.
+On isole \( V_x \) et on substitue dans (1) :
+$$
+V_{i} = R^{2} C^{2}\frac{d^{2} V_{0}}{dt^{2}} +\left[\frac{RC}{\alpha } +2RC\frac{R}{R'}\right]\frac{dV_{0}}{dt} +\left[\frac{1}{\beta } +\frac{R}{R'}\left(\frac{1}{\alpha } +\frac{R}{R'}\right)\right] V_{0}
+$$
 
-#### Étapes de la réalisation du programme :
+On considère que \( R \) est négligeable devant \( R' \), ce qui donne sous forme normalisée :
+$$
+\frac{d^{2} V_{0}}{dt} +\left(\frac{1}{\alpha ( RC)^{2}}\right)\frac{dV_{0}}{dt} +\frac{V_{0}}{\beta ( RC)^{2}} = \frac{V_{i}}{( RC)^{2}}
+$$
 
-J'ai commencé par travailler sur un système simple : le pendule plan
-amorti.  
-Une vidéo
-de pendule plan a été prise durant un TP de physque. J'ai réalisé le pointage
-grâce à `Tracker`, et ai exporté les données sur un fichier
-texte qui contient une liste de temps sur la première colonne, et une
-liste d'angles sur la deuxième.
-
-Le programme suivant permet d'approximer la courbe par une sinusoïdale
-amortie, et d'en retrouver l'équadiff correspondante.  
-J'ai ensuite réalisé les calculs pour retrouver les coefficients du circuit
-RLC correspondant.
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
-import sympy as sp
-
-# Lecture des données
-def lecture(path):
-    data = np.loadtxt(path)
-    t = data[:, 0]
-    theta = data[:, 1]
-    return t, theta
-
-# Modèles de foncitons
-def sinus(t, A, B, C, D):
-    return A * np.sin(B * t + C) + D
-
-def cosinus(t, A, B, C, D):
-    return A * np.cos(B * t + C) + D
-
-def exponentielle(t, A, B, C):
-    return A * np.exp(B * t) + C
-
-def poly_deg_2(t, A, B, C):
-    return A * t**2 + B * t + C
-
-def poly_deg_3(t, A, B, C, D):
-    return A * t**3 + B * t**2 + C * t + D
-
-def sinus_amorti(t, A, omega, phi, gamma):
-    return A * np.sin(omega * t + phi) * np.exp(-gamma * t)
-
-# Approximation par un des modèles
-def detect_and_fit_function(t, theta):
-    functions = {
-        'sin': sinus,
-        'cos': cosinus,
-        'exp': exponentielle,
-        'poly2': poly_deg_2,
-        'poly3': poly_deg_3,
-        'sinus_amorti': sinus_amorti
-    }
-    
-    meilleur = None
-    nom_meilleur = None
-    meilleurs_params = None
-    meilleur_r_carré = -np.inf
-
-    for name, func in functions.items():
-        try:
-            params, _ = curve_fit(func, t, theta)
-            reste = theta - func(t, *params)
-            ss_res = np.sum(reste**2)
-            ss_tot = np.sum((theta - np.mean(theta))**2)
-            r_carré = 1 - (ss_res / ss_tot)
-            
-            if r_carré > meilleur_r_carré:
-                meilleur_r_carré = r_carré
-                meilleur = func
-                nom_meilleur = name
-                meilleurs_params = params
-        except RuntimeError:
-            continue
-    
-    if meilleur:
-        print(f"Meilleure correspondance : {nom_meilleur}")
-        print(f"Coefficients : {meilleurs_params}")
-        print(f"R²: {meilleur_r_carré}")
-        
-        return meilleur, meilleurs_params, meilleur_r_carré
-    else:
-        print("Aucun modèle de fonction ne correspond à la courbe des données.")
-        return None, None, None
-
-# Génération de l'équadiff
-def fonction_vers_equadiff(func, params):
-    t = sp.symbols('t')
-    f = sp.Function('f')(t)
-
-    if func.__name__ == 'sinus_amorti':
-        A, omega, phi, gamma = params
-        equadiff = sp.diff(f, t, t) + 2 * gamma * sp.diff(f, t) + omega**2 * f
-    else:
-        # Si la fonction n'est pas un sinus amorti (on génère une équation de base)
-        equadiff = sp.diff(f, t, t) + f
-
-    return equadiff
+On prend \( RC = 1 \) à une puissance de 10 près, ce qui donnera bien ce que l'on veut. Il suffit de modifier les coefficients pour correspondre à l'équation modélisée.
 
 
+Voici les résultats pour une entrée en échelon pour le pendule-plan puis pour le circuit d'ordre 2. Les données du pendule-plan ont été prélevées d'une vidéo par un logiciel de pointage.
 
-def circuit_analogue(func, params):
-    if func.__name__ == 'sinus_amorti':
-        A, omega, phi, gamma = params
-        R = 2 * gamma
-        L = 1 / omega**2
-        C = 1 / (omega**2 * L)
-        print("\nCircuit électrique équivalent :")
-        print(f"Résistance (R) : {R} ohms")
-        print(f"Bobine (L) : {L} henrys")
-        print(f"Condensateur (C) : {C} farads")
-    else:
-        print("Pour l'instant, la génération du circuit est implémentée uniquement pour un sinus amorti :(")
+![Graphe du pendule plan](https://www.aulysv.fr/_app/immutable/assets/graph.GHVBapEw.svg) ![Graphe du circuit](https://www.aulysv.fr/_app/immutable/assets/graph2.DS9_i0Wq.svg)
 
+(pas encore exporté les données du circuit, le deuxième graphe est un graphe test)
 
+## Premières idées non abouties
 
-path = "python/data.txt"
+Avant de cerner précisément la problématique et d'acquérir les connaissances précises, j'ai voulu explorer toutes les facettes du domaine, en particulier les méthodes de résolution mécaniques.
 
-t, theta = lecture(path)
+### Intégrateur mécanique :
 
-# Détection et ajustement de la fonction
-func, params, r_carré = detect_and_fit_function(t, theta)
+Voici l'intégrateur mécanique auquel j'ai enlevé le support d'écriture afin de comprendre son fonctionnement :
 
-if func:
-    # Génération de l'équadiff
-    diff_eq = fonction_vers_equadiff(func, params)
-    print("\nÉquadiff générée :")
-    sp.pprint(diff_eq)
+![Intégrateur mécanique](https://www.aulysv.fr/_app/immutable/assets/im.BkeimqOQ.png)
 
-    # Déduire et imprimer le circuit analogue
-    circuit_analogue(func, params)
+Un moteur permet de fournir une vitesse de rotation constante à la plaque carrée (je n'avais pas de disque). Plus haut, un module translatable permet le traçage de la courbe dont l'intégrale est voulue. La vitesse de rotation de la roue dépend de la position de cette dernière sur le "disque" en rotation. La distance de son point d’appui avec le centre du disque, `y`, varie dans le temps. Cette distance est contrôlée à la main en haut à droite. Quand le disque tourne d’un angle infinitésimal dθ, pendant un intervalle de temps `βdτ`, l’axe de la roue tourne d’un angle `y(τ) dθ`. Pendant un intervalle de temps `[0, t]`, l’axe de la roulette tourne donc d’un angle `α ∫ y(τ) β dτ`. Le cylindre en bois transmet donc la vitesse de rotation à une vis sans fin qui permet le traçage de l’intégrale (de 0 à t) : `∫ y(τ) dτ`, à un facteur de proportionnalité près.
 
-    # Traçage de la fonction modélisée
-    t_range = np.linspace(t[0], t[-1], 1000)
-    theta_fit = func(t_range, *params)
+Pour le dire simplement, plus la roue est éloignée du centre de rotation de la plateforme, plus elle tourne vite. Une relation linéaire entre vitesse et positon une opération de dérivée, et donc d'intégration dans l'autre sens.
 
-    plt.plot(t, theta, '.', label='Données')
-    plt.plot(t_range, theta_fit, label=f'Approximation')
-    plt.xlabel('Temps')
-    plt.ylabel('Theta')
-    plt.legend()
-    plt.title('Données et courbe aprochée')
-    plt.show()
-```
+On obtient les résultats suivants :
 
-#### Output :
+![Résultats de l'intégrateur mécanique](https://www.aulysv.fr/_app/immutable/assets/mec.Bv-uWRLx.png)
 
-![[output.png]]
+L'entrée est dessinée à la main en faisant translater le module translatable : la valeur de cette translation donne les y en fonction du temps. Les x sont données par la translation d'une feuille dont la vitesse est donnée par le moteur. Cette vitesse est synchronisée à celle de la translation de la feuille de sortie. Ici, j'ai tenté d'intégrer une courbe en 1/x en essayant de coller le plus possible au graphe que j'ai tracé au préalable.
 
-# Bibliographie
+On voit bien que la sortie correspond grossièrement à du ln(x), même si on observe des erreurs. Ces erreurs sont dues à la transmission de la vitesse de rotation de la roue jusqu'à la roue et vis sans fin. Il y a souvent des accrochages qui créent un retard (ralentissement de la pente), qui est ensuite compensé quand la rotation reprend après le blocage.
 
-## Article principal
-
-![[buancom.pdf]]
-
-## Autres articles
-
-- **1. Source:** Wikipedia
-    
-    - **Contenu et utilité:** Contexte historique et idées pas ou peu scientifiques. Permettra d'agrandir la bibliographie et d'avoir une vue d'ensemble du sujet.
-    - **Lien(s):**
-        - [Analog computer](https://en.wikipedia.org/wiki/Analog_computer)
-        - [Calculateur analogique](https://fr.wikipedia.org/wiki/Calculateur_analogique)
-        - [Analyseur différentiel](https://fr.wikipedia.org/wiki/Analyseur_diff%C3%A9rentiel)
-        - [Differential analyser](https://en.wikipedia.org/wiki/Differential_analyser)
-- **2. Source:** DPMC Genève
-    
-    - **Contenu et utilité:** Article un peu plus scientifiquement poussé, abordable mais comportant des notions non vues en classes (dont des ALI). Peut-être un peu spécifique.
-    - **Lien(s):** [PDF](https://www.aulysv.fr/_app/immutable/assets/dpmc.D6hnSB0g.pdf)
-- **3. Source:** Univ. d'Algarve
-    
-    - **Contenu et utilité:** Document comportant une partie mathématique plus poussée sur le sujet, mais semble plus complexe et moins général : étudie particulièrement le General Purpose Analog Computer (GPAC)
-    - **Lien(s):** [PDF](https://www.aulysv.fr/_app/immutable/assets/bazar.CKnQayjT.pdf)
-- **4. Source:** Univ. of Tennessee
-    
-    - **Contenu et utilité:** Article très vaste et général sur l'informatique analogique, fait intervenir des notions mathématiques abordables. Permettra surtout de trouver d'autres sources, car possède une bibliographie complète.
-    - **Lien(s):** [PDF](https://www.aulysv.fr/_app/immutable/assets/utk.UV8GZNkB.pdf)
-- **5. Source:** Note de G. Coriolis
-    
-    - **Contenu et utilité:** Petit paragraphe de Coriolis (de la 5e à la 9e page) sur le traçage de courbe d'équations différentielles de manière physique.
-    - **Lien(s):**
-        - [PDF](https://www.aulysv.fr/_app/immutable/assets/corio.DwyHfYWF.pdf)
-        - [PDF (complet)](https://www.aulysv.fr/_app/immutable/assets/coriocomplet.xtNJkGsx.pdf)
-- **6. Source:** interstices.info
-    
-    - **Contenu et utilité:** Article assez complet sur les calculateurs analogiques. Développe beaucoup le côté historique, comme beaucoup d'autres documents à ce sujet, mais aborde tout de même des notions plus scientifiques et concrètes.
-    - **Lien(s):** [PDF](https://interstices.info/les-calculateurs-analogiques/)
-- **7. Source:** MIT
-    
-    - **Contenu et utilité:** Document paraissant assez intéressant physiquement que je n'ai pas eu le temps d'étudier...
-    - **Lien(s):** [Article](https://www.aulysv.fr/_app/immutable/assets/mit.DpXN-5VT.pdf)
-- **8. Source:** M. Molin
-    
-    - **Contenu et utilité:** Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolores laboriosam temporibus soluta impedit aut?
-    - **Lien(s):** [PDF](https://www.aulysv.fr/_app/immutable/assets/buancom.CW5OIzkE.pdf)
-- **9. Source:** M. Molin
-    
-    - **Contenu et utilité:** Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat commodi quam dolorum at voluptatem nesciunt quo excepturi, libero odio tenetur.
-    - **Lien(s):** [PDF](https://www.aulysv.fr/_app/immutable/assets/hnanhycom.D-0tQ4IB.pdf)
-
+On voit bien que l'intégration mécanique n'est pas très optimisée : j'abandonne donc cette piste.
