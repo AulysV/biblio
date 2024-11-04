@@ -5,30 +5,57 @@ tags:
   - numérique
   - électronique
 ---
-## Résolution analogique d'équations différentielles
+# Résolution analogique d'équations différentielles
 
+## MCOT :
 ## Ancrage au thème
-
-Lorsqu'une solution analytique à un problème n'est pas accessible, on peut recourir au numérique. Une autre méthode de résolution peut faire gagner en temps de calcul ou en stabilité : la résolution analogique, grâce à des circuits électriques. On convertit ainsi un problème de résolution en un problème de modélisation.
+Lorsqu'une solution analytique à un problème n'est pas accessible, on peut recourir au numérique. Une autre méthode de résolution peut faire gagner en temps de calcul ou en stabilité : la résolution analogique, grâce à des circuits électriques. On convertit ainsi un problème de résolution en un problème de modélisation.
 
 ## Motivations du choix
-
 Travailler sur le calcul analogique me permet à la fois de comprendre les similarités entre l'électronique et les autres domaines de la physique, mais aussi de comprendre les raisons de la réapparition récente du calcul analogique dans les dernières recherches technologiques, comme en machine learning.
 
 ## Positionnement thématique
+- **Sciences industrielles** : Électronique
+- **Physique** : Micro-technologies
+- **Mathématiques** : Analyse : Équations différentielles (EDO)
 
-- **Sciences industrielles** : Électronique
-- **Physique** : Micro-technologies
-- **Mathématiques** : Analyse : Équations différentielles (EDO)
-
-## Mots-clefs
-
-- **Français** : Analogique, Résolution, Équations différentielles, Numérique
-- **Anglais** : Analog computing, Differential Equations, Numeric
+## Mots-clés
+- **Français** : Analogique, Résolution, Équations différentielles, Numérique
+- **Anglais** : Analog computing, Differential Equations, Numeric
 
 ## Bibliographie commentée
 
-(À faire)
+Avant la révolution numérique, les calculs physiques étaient réalisés à la main et mécaniquement (anticythère), puis électroniquement depuis la fin du XIXe (Lord Kelvin et l'intégration mécanique) [^1].
+Le numérique a fini par les remplacer, pour deux raisons principales : les ordinateurs numériques font des calculs exacts, et peuvent être programmés pour réaliser une variété infinie de tâches, contrairement à l’analogique qui consiste à réaliser des calculs en se basant sur les propriétés fondamentales de la physique, régie entre autres par des équations différentielles (loi des nœuds ou lois de fonctionnement).
+
+Cependant, l’analogique a plusieurs avantages qui le rendent particulièrement performant dans les nouvelles technologies actuelles. Les réseaux de neurones nécessitent une puissance de calcul phénoménale, et les avantages de l'analogique tels que la capacité à réaliser de nombreux calculs en parallèle sans stockage ont poussé des entreprises comme Aspinity, basées sur les travaux initiés par des chercheurs comme Hava T. Stiegelmann [^2], à se servir de ces anciennes technologies pour des applications modernes.
+
+L'analogique possède aussi l'avantage de ne pas échantillonner le réel et de réaliser les calculs en se basant sur les propriétés physiques, ce qui peut faire gagner en temps de calcul et économiser jusqu’à un facteur 1000 en termes de coût énergétique dans des applications courantes [^3], surtout dans le contexte actuel d’impact écologique du numérique.
+
+La résolution d'équations différentielles par méthodes analogiques est dirigée par une méthode clé décrite dans *Analog Computing* de Prof. Dr. Bernd Ulmann : la méthode d'intégrations successives [^4]. En partant d'une équation de la forme \( x'' + bx' + cx + d = f \), on isole \( x'' = f - bx' - cx - d \). On peut alors intégrer successivement pour obtenir les valeurs \( x' \) puis \( x \). Les intégrations sont effectuées par un amplificateur linéaire en configuration intégrateur, ou par un intégrateur mécanique.
+
+Les principales limites de cette méthode élémentaire sont la difficulté de programmation, qui est élevée pour des résultats souvent moins précis que la résolution numérique. En effet, les erreurs peuvent se retrouver amplifiées, ce qui a longtemps été un frein à la méthode analogique (frein qui a été révolutionnairement levé par Edwin A. Goldberg dans les années 50) [^5].
+
+Les autres limites de l'analogique pur, contrairement aux ordinateurs hybrides (couplant digital et analogique) ou digitaux, sont la difficulté à systématiser la résolution. Une équation simple, même linéaire ou à coefficients constants, peut nécessiter un câblage complexe. Les *ordinateurs analogiques* ont aidé à résoudre ce problème, même si programmateur d'ordinateur analogique était un métier à part entière.
+
+## Problématique retenue
+Comment résoudre des équations différentielles grâce à des méthodes analogiques et quelles en sont les limites ?
+
+## Objectif
+On propose donc :
+- De comprendre les principes de base du calcul analogique et de la résolution d'équations différentielles, en résolvant des équations différentielles ordinaires.
+- De comparer les résultats obtenus avec ceux de la résolution numérique.
+- Proposer une systématisation de la résolution.
+
+---
+
+### Références
+[^1]: Tides A Scientific History - David Edgar Cartwright
+[^2]: Neural Networks and Analog Computation: Beyond the Turing Limit - Hava T. Siegelmann
+[^3]: 12 Future and chances, Analog Computing - Prof. Dr. Bernd Ulmann
+[^4]: 7.2 Kelvin’s feedback technique, Analog Computing - Prof. Dr. Bernd Ulmann
+[^5]: 4.1.2 Drift stabilization, Analog Computing - Prof. Dr. Bernd Ulmann
+
 
 # Travail réalisé
 
